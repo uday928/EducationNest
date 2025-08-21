@@ -1,9 +1,31 @@
-import React from 'react'
+// import React from 'react' 
+
+import { Route, Routes } from "react-router-dom"
+import Home from "./pages/student/Home"
+import CoursesList from "./pages/student/CoursesList"
+import CourseDetails from "./pages/student/CourseDetails"
+import MyEnrollments from "./pages/student/MyEnrollments"
+import Player from "./pages/student/Player"
+import Loading from "./components/student/Loading"
+
 
 const App = () => {
+  
   return (
-    <div className='m-2'>
-      Hello World
+    <div>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/course-list" element={<CoursesList/>} />
+        <Route path="/course-list/:input" element={<CoursesList/>} />
+        {/* Filtered course list */}
+        <Route path="/course/:id" element={<CourseDetails/>}/>
+        <Route path="/my-enrollments/:id" element={<MyEnrollments/>}/>
+        <Route path="/player/:courseId" element={<Player/>}/>
+        <Route path="/loading/:path" element={<Loading/>}/>
+      </Routes>
+      
+      {/* Debug: Adding direct text to see if App renders */}
+      {/* <h1>App is working - Remove this after testing</h1> */}
     </div>
   )
 }

@@ -26,5 +26,21 @@ file structure:
                 <--diffrent pages-->
             
 GitHub:
+    
     git init
     git remote add origin https://github.com/uday928/EducationNest.git
+    git add .
+    git commit -m "Message"
+    git push -u origin main
+
+    For Regular push:
+        git add .
+        git commit -m "Message"
+        git push
+
+create Jsconfig.json and 
+
+{
+    "exclude":["node_modules"]        
+}
+paste this to get auto improts

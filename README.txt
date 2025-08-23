@@ -67,4 +67,6 @@ run given commands:
 
 text-home-heading-large: custome tailwindcss classes update tailwind.config.js
 
+rich-text class: added custom css properties in index.css
+
 

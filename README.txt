@@ -33,6 +33,9 @@ GitHub:
     git commit -m "Message"
     git push -u origin main
 
+    to remove the file from github:
+        git rm --cached <--Path-->
+
     For Regular push:
         git add .
         git commit -m "Message"
@@ -63,4 +66,5 @@ run given commands:
     update student Navbar from where user will perform authantication steps
 
 text-home-heading-large: custome tailwindcss classes update tailwind.config.js
+
 

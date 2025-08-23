@@ -1,35 +1,37 @@
 import React, { useContext } from 'react'
 import { assets } from '../../assets/assets'
 import { AppContext } from '../../context/AppContext'
+import { Link } from 'react-router-dom'
 
 
 
-const CourseStart = ({course}) => {
+const CourseCard = ({course}) => {
 
-  const {currency}=useContext(AppContext)
+  const {currency,calculateRating}=useContext(AppContext)
 
   return (
-    <div>
+    <Link to={'/course/'+course._id} onClick={()=>scrollTo(0,0)} className='border border-gray-500/30 pb-6 overflow-hidden rounded-lg'>
       {/* a single course card / dummy data will come from assests.js*/}
-      <img src={course.courseThumbnail} alt="" />
-      <div>
-        <h3>{course.courseTitle}</h3>
-        <p>{course.educator.name}</p>
-        <div>
+      <img className='w-full' src={course.courseThumbnail} alt="" />
+      <div className='p-3 text-left'>
+        <h3 className='text-base font-semibold'>{course.courseTitle}</h3>
+        <p className='text-gray-500'>{course.educator.name}</p>
+        <div className='flex items-center space-x-2'>
+          {/* Rating section */}
           {/* Manual for now will be dynamic after */}
-          <p>4.5</p>
-          <div>
-            {[...Array[5]].map((_,i)=>(
-              <img key={i} src={assets.star} alt=''/>
+          <p>{calculateRating(course)}</p>
+          <div className='flex'>
+            {[...Array(5)].map((_,i)=>(
+              <img key={i} className='w-3.5 h-3.5' src={i<Math.floor(calculateRating(course))?assets.star:assets.star_blank} alt=''/>
             ))}
           </div>
-          <p>22</p>
+          <p className='text-gray-500'>{course.courseRatings.length}</p>
         </div>
-        {/* upto 2 decimal digits */}
-        <p>{currency}{(course.coursePrice - course.discount * course.coursePrice/100).toFixed(2)}</p>
+        {/* Price || upto 2 decimal digits */}
+        <p className='text-base font-semibold text-gray-800'>{currency}{(course.coursePrice - course.discount * course.coursePrice/100).toFixed(2)}</p>
       </div>
-    </div>
+    </Link>
   )
 }
 
-export default CourseStart
+export default CourseCard

@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
           </div>
       </div>
-      <p className='py-4 text-center text-xs md:text-sm text-white/60'>From Uday Gandhi #UG</p>
+      <p className='py-4 text-center text-xs md:text-sm text-white/60'>From Uday Gandhi #UG</p> 
     </footer>
   )
 }

@@ -62,3 +62,5 @@ run given commands:
     update main.jsx 
     update student Navbar from where user will perform authantication steps
 
+text-home-heading-large: custome tailwindcss classes update tailwind.config.js
+

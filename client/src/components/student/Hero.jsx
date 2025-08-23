@@ -1,5 +1,6 @@
 import React from 'react'
 import { assets } from '../../assets/assets'
+import SearchBar from './SearchBar'
 
 
 const Hero = () => {
@@ -15,6 +16,7 @@ const Hero = () => {
       <p className='md:hidden text-gray-500 max-w-sm mx-auto'>
         A place where educators inspire, students thrive, and learning never stops.
       </p>
+      <SearchBar/>
    </div>
   )
 }

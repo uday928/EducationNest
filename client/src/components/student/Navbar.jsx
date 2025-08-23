@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom'

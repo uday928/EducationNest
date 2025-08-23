@@ -10,8 +10,10 @@ import { AppContext } from "./AppContext";
 
 // provider component
 export const AppContextProvider=(props)=>{
+    const currency=import.meta.env.VITE_CURRENCY
+    // to access currency var around whole website add it in value
     const value={
-
+        currency
     };
     return (
         <AppContext.Provider value={value}>

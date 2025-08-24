@@ -94,7 +94,7 @@ npm install express nodemon dotenv cors cloudinary mongoose multer stripe svix@1
     mongoose   : project with mongoDB database
     multer     : to upload the images 
     stripe     : payment gatway 
-    svix       : DevOps
+    svix       : webhooks
     clerk
 
 After creating simple server on server.js test the API with postman
@@ -108,3 +108,5 @@ paste MONGODB_URI in .env
 go to network access in mongoDB website: create IP 0.0.0.0/0
 
 update configs/mongoDB.js to connect database with server
+
+create model in models/User.js

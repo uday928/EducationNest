@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './configs/mongoDB.js'
+import { clerkWebhooks } from './controllers/webhooks.js'
 
 
 // Initialize Express
@@ -18,6 +19,7 @@ app.use(cors()) //to connect backend with any other domain
 // Routes
 
 app.get('/',(req,res)=>res.send("API working"))
+app.post('/clerk',express.json(),clerkWebhooks)
 
 //Port
 

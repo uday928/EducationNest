@@ -28,7 +28,8 @@ const App = () => {
         <Route path="/course-list/:input" element={<CoursesList/>} />
         {/* Filtered course list */}
         <Route path="/course/:id" element={<CourseDetails/>}/>
-        <Route path="/my-enrollments/:id" element={<MyEnrollments/>}/>
+        <Route path="/my-enrollments" element={<MyEnrollments/>}/>
+        {/* <Route path="/my-enrollments/:id" element={<MyEnrollments/>}/> */}
         <Route path="/player/:courseId" element={<Player/>}/>
         <Route path="/loading/:path" element={<Loading/>}/>
         <Route path="/educator" element={<Educator/>}>

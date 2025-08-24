@@ -69,4 +69,8 @@ text-home-heading-large: custome tailwindcss classes update tailwind.config.js
 
 rich-text class: added custom css properties in index.css
 
-
+Install Quilljs
+    commands:
+        npm install quill@2.0.3
+    CSS:
+        import "quill/dist/quill.core.css";

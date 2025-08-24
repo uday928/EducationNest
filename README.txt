@@ -74,3 +74,37 @@ Install Quilljs
         npm install quill@2.0.3
     CSS:
         import "quill/dist/quill.core.css";
+
+
+
+<---------Backend------------>
+
+create server.js
+
+commands: npm init -y
+
+npm install express nodemon dotenv cors cloudinary mongoose multer stripe svix@1.42.0 @clerk/express
+
+:: why these packages:
+    express
+    nodemon    : restart the Backend sever when changes happen
+    dotenv     : to use env variables
+    cors       : connect Backend with any other domain
+    cloudinary : to store the image in cloudinary storage 
+    mongoose   : project with mongoDB database
+    multer     : to upload the images 
+    stripe     : payment gatway 
+    svix       : DevOps
+    clerk
+
+After creating simple server on server.js test the API with postman
+
+create folder structure: configs, controllers, middlewares, models, routes
+create file: .env 
+
+open mongoDB atlas
+process connection with compass option
+paste MONGODB_URI in .env 
+go to network access in mongoDB website: create IP 0.0.0.0/0
+
+update configs/mongoDB.js to connect database with server

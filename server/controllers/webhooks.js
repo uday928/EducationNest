@@ -55,9 +55,13 @@ export const clerkWebhooks=async (req,res)=>{
     }
 }
 
-// const stripeInstance=new Stripe(process.env.STRIPE_WEBHOOK_SECRET)
+// Payment interface
 
+// change happend
+
+// old : const stripeInstance = new Stripe(process.env.STRIPE_WEBHOOK_SECRET)
 const stripeInstance=new Stripe(process.env.STRIPE_SECRET_KEY)
+
 export const stripeWebhooks=async(request,response)=>{
     // source: https://docs.stripe.com/webhooks?snapshot-or-thin=snapshot&lang=node  title: Verify webhook signatures with official libraries
     //https://docs.stripe.com/webhooks?snapshot-or-thin=snapshot&lang=node#verify-webhook-signatures-with-official-libraries
@@ -81,6 +85,13 @@ export const stripeWebhooks=async(request,response)=>{
       const session=await stripeInstance.checkout.sessions.list({
         payment_intent:paymentIntentId
       })
+
+    //   newly added
+      if (!session.data.length) {
+        console.error("No checkout session found for payment intent:", paymentIntentId);
+        return response.status(400).send("No session found");
+    }
+
       const {purchaseId}=session.data[0].metadata;
       const purchaseData=await Purchase.findById(purchaseId)
       const userData=await User.findById(purchaseData.userId)

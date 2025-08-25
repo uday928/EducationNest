@@ -36,7 +36,9 @@ app.use('/api/course',express.json(),courseRouter) //route for courseRoutes
 
 app.use('/api/user',express.json(),userRouter) //route for user
 
-app.post('/stripe',express.raw({type:'application/json'}),stripeWebhooks) //payment gateway
+// old : app.post('/stripe',express.raw({type:'application/json'}),stripeWebhooks) //payment gateway
+
+app.post('/webhooks',express.raw({type:'application/json'}),stripeWebhooks)
 
 //Port
 

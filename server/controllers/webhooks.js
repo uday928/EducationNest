@@ -55,7 +55,9 @@ export const clerkWebhooks=async (req,res)=>{
     }
 }
 
-const stripeInstance=new Stripe(process.env.STRIPE_WEBHOOK_SECRET)
+// const stripeInstance=new Stripe(process.env.STRIPE_WEBHOOK_SECRET)
+
+const stripeInstance=new Stripe(process.env.STRIPE_SECRET_KEY)
 export const stripeWebhooks=async(request,response)=>{
     // source: https://docs.stripe.com/webhooks?snapshot-or-thin=snapshot&lang=node  title: Verify webhook signatures with official libraries
     //https://docs.stripe.com/webhooks?snapshot-or-thin=snapshot&lang=node#verify-webhook-signatures-with-official-libraries

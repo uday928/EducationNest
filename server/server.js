@@ -19,10 +19,8 @@ app.use(cors()) //to connect backend with any other domain
 // Routes
 
 app.get('/',(req,res)=>res.send("API working"))
-// app.use(express.json())
-// app.post('/clerk',express.raw({type:'application/json'}),clerkWebhooks)
 
-app.post('/clerk',express.json(),clerkWebhooks)
+app.post('/clerk',express.json(),clerkWebhooks) 
 
 //Port
 

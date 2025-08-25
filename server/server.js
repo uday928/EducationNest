@@ -1,8 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
-import connectDB from './server/configs/mongoDB.js'
-import { clerkWebhooks } from './server/controllers/webhooks.js'
+import connectDB from './configs/mongoDB.js'
+import { clerkWebhooks } from './controllers/webhooks.js'
 
 
 // Initialize Express

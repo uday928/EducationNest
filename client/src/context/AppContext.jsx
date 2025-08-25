@@ -8,6 +8,9 @@ import { AppContext } from "./AppContext";
 import {dummyCourses} from '../assets/assets'
 import {useNavigate} from 'react-router-dom'
 import humanizeDuration from 'humanize-duration'
+//added to get token
+import {useAuth,useUser} from '@clerk/clerk-react';
+
 // create context
 // export const AppContext=createContext();
 
@@ -15,6 +18,11 @@ import humanizeDuration from 'humanize-duration'
 export const AppContextProvider=(props)=>{
     const currency=import.meta.env.VITE_CURRENCY
     const navigate=useNavigate()
+
+    // added to get token
+    const {getToken}=useAuth()
+    const {user}=useUser()
+
     const [allCourses,setAllCourses]=useState([])
     const [isEducator,setIsEducator]=useState(true)
     const [enrolledCourses,setEnrolledCourses]=useState([])
@@ -71,6 +79,17 @@ export const AppContextProvider=(props)=>{
         fetchAllCourses(),
         fetchEnrolledCourses()
     },[])
+
+    // added to get token
+    const logToken=async()=>{
+        console.log(await getToken());
+    }
+
+    useEffect(()=>{
+        if(user){
+            logToken()
+        }
+    },[user])
 
     // to access around whole website add it in value
     const value={

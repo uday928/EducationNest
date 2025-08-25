@@ -21,7 +21,6 @@ createRoot(document.getElementById('root')).render(
   // </StrictMode>,
   <BrowserRouter>
 
-  {/* 25-08-2025 9:34 webhookEndpoint added */}
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl='/' >
     {/* After siging out user will be redirected to Home page */}
       <AppContextProvider>
